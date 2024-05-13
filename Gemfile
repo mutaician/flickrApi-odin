@@ -67,3 +67,5 @@ group :test do
 end
 
 gem "flickr", "~> 2.1"
+
+gem "dotenv-rails", "~> 3.1"

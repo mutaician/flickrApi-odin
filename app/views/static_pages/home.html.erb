@@ -1,0 +1,23 @@
+
+<h1>Home</h1>
+
+<div>
+<%= form_tag '/', method: :get do %>
+    <%= label_tag :id, "Enter an id:" %> <br>
+  <%= text_field_tag :id, params[:id], required: true %> <br><br>
+  <%= submit_tag "Show photos" %>
+<% end %>
+</div>
+
+<% if @error%>
+    <p><%= @error %></p>
+<% end %>
+
+<% if @photos %>
+  <h2>Photos</h2>
+  <ul>
+    <% @photos.each do |photo| %>
+      <li><%= image_tag Flickr.url(photo) %></li>
+    <% end %>
+  </ul>
+<% end %>
